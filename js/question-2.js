@@ -12,7 +12,7 @@ const games = [
     }
 ]
 const error = document.querySelector('.error');
-const baseURL = 'https://api.rawg.io/api/games';
+const baseURL = 'https://noroffcors.herokuapp.com/https://api.rawg.io/api/games';
 
 
 async function getRawgData(){
