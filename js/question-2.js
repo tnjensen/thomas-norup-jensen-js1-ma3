@@ -27,7 +27,7 @@ async function getRawgData(){
     rawgResults.innerHTML = "";
     for(i = 0; i < records.results.length; i++){
         if(i === 8){
-            return;
+            break;
         }
     
         rawgResults.innerHTML += `<div>
