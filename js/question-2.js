@@ -22,21 +22,23 @@ async function getRawgData(){
     const url =  "?" + "dates=" + games[0].relaseDate + "," + games[1].relaseDate + "&ordering=rating" + "&key=" + apiKey;
     console.log(baseURL + url);
     const response = await fetch(baseURL + url);
-    const results = await response.json();
+    const records = await response.json();
+    console.log(records.results[0].ratings[0].title);
+
     /* if(results.length === 0){
         error.innerHTML = "An error ocurred, please try again...";
         return;
     } */
-    for(i = 0; i < results.length; i++){
-        /* if(i === 9){
+    for(i = 0; i < records.results.length; i++){
+        if(i === 9){
             return;
-        } */
+        }
     
         rawgResults.innerHTML += `<div>
                               <ul>
-                                <li>Name: ${results[i].name}</li>
-                                <li>Rating: ${results[i].rating}</li>
-                                <li>Number of tags: ${results[i].tags.length}</li>
+                                <li>Name: ${records.results[i].name}</li>
+                                <li>Rating: ${records.results[0].ratings[0].title}</li>
+                                <li>Number of tags: ${records.results[i].tags.length}</li>
                               </ul>
                             </div>`;
     }

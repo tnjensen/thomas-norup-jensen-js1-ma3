@@ -3,4 +3,10 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
-
+ul li{
+    list-style-type: none;
+    background-color: #f7f7f7;
+    width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+}
